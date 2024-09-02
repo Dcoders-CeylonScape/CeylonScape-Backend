@@ -1,0 +1,48 @@
+networks:
+  dcodenetwork:
+    driver: bridge
+
+services:
+  postgres:
+    image: postgres:13
+    container_name: dcode-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: docdeDB
+    networks:
+      - dcodenetwork
+    volumes:
+      - ./db.sql:/docker-entrypoint-initdb.d/db.sql
+    ports:
+      - "5002:5432"
+
+  auth-api:
+    build:
+      context: .
+      dockerfile: ./AuthAPI/Dockerfile
+    container_name: CS-auth-api
+    image: ${DOCKER_REGISTRY-}auth-api
+    environment:
+      DATABASE_URL: "Host=postgres;Port=5432;Database=dcodeDB;Username=postgres;Password=123;"
+    networks:
+      - dcodenetwork
+    depends_on:
+      - postgres
+    ports:
+      - "5001:8080"
+    command: ["dotnet", "ef", "database", "update"]
+
+  gateway:
+    build:
+      context: .
+      dockerfile: ./Gateway/Dockerfile
+    container_name: dcode-gateway
+    image: ${DOCKER_REGISTRY-}gateway
+    networks:
+      - dcodenetwork
+    depends_on:
+      - auth-api
+      - postgres
+    ports:
+      - "5000:8080"

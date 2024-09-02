@@ -1,0 +1,157 @@
+{
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/User",
+      "UpstreamHttpMethod": [
+        "GET",
+        "POST"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "auth-api",
+          "Port": 8080
+        }
+      ],
+      "DownstreamPathTemplate": "/User"
+    },
+    {
+      "UpstreamPathTemplate": "/User/{id}",
+      "UpstreamHttpMethod": [
+        "GET",
+        "DELETE",
+        "PUT"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "auth-api",
+          "Port": 8080
+        }
+      ],
+      "DownstreamPathTemplate": "/User/{id}"
+    },
+    {
+      "UpstreamPathTemplate": "/Stadium",
+      "UpstreamHttpMethod": [
+        "GET",
+        "POST"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "stadium-api",
+          "Port": 8080
+        }
+      ],
+      "DownstreamPathTemplate": "/Stadium"
+    },
+    {
+      "UpstreamPathTemplate": "/Stadium/{id}",
+      "UpstreamHttpMethod": [
+        "GET",
+        "PUT",
+        "DELETE"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "stadium-api",
+          "Port": 8080
+        }
+      ],
+      "DownstreamPathTemplate": "/Stadium/{id}"
+    },
+    {
+      "UpstreamPathTemplate": "/Timeslot",
+      "UpstreamHttpMethod": [
+        "GET",
+        "POST"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "timeslot-api",
+          "Port": 8080
+        }
+      ],
+      "DownstreamPathTemplate": "/Timeslot"
+    },
+    {
+      "UpstreamPathTemplate": "/Timeslot/{id}",
+      "UpstreamHttpMethod": [
+        "GET",
+        "PUT",
+        "DELETE"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "timeslot-api",
+          "Port": 8080
+        }
+      ],
+      "DownstreamPathTemplate": "/Timeslot/{id}"
+    },
+    {
+      "UpstreamPathTemplate": "/Booking/user/{userId}",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "booking-api",
+          "Port": 8080
+        }
+      ],
+      "DownstreamPathTemplate": "/Booking/user/{userId}"
+    },
+    {
+      "UpstreamPathTemplate": "/Booking/stadium/{stadiumId}",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "booking-api",
+          "Port": 8080
+        }
+      ],
+      "DownstreamPathTemplate": "/Booking/stadium/{stadiumId}"
+    },
+    {
+      "UpstreamPathTemplate": "/Booking/{bookingid}",
+      "UpstreamHttpMethod": [
+        "GET",
+        "PUT"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "booking-api",
+          "Port": 8080
+        }
+      ],
+      "DownstreamPathTemplate": "/Booking/{bookingid}"
+    },
+    {
+      "UpstreamPathTemplate": "/Booking",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "booking-api",
+          "Port": 8080
+        }
+      ],
+      "DownstreamPathTemplate": "/Booking"
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5000"
+  }
+}
