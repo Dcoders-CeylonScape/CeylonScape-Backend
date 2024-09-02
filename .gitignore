@@ -1,0 +1,9 @@
+.idea/
+.vscode/
+bin/
+obj/
+#Migrations/
+#Properties/
+#*.csproj
+#*.xml
+#*.slnhttps://bunkr.site/v/GMYonCg8pBJl4
