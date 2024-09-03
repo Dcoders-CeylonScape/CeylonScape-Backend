@@ -113,3 +113,4 @@ E:\DcodeLabs\CeylonScape\CeylonScape\AuthAPI\bin\Debug\net8.0\Microsoft.Identity
 E:\DcodeLabs\CeylonScape\CeylonScape\AuthAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 E:\DcodeLabs\CeylonScape\CeylonScape\AuthAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 E:\DcodeLabs\CeylonScape\CeylonScape\AuthAPI\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+E:\DcodeLabs\CeylonScape\CeylonScape\AuthAPI\obj\Debug\net8.0\AuthAPI.sourcelink.json

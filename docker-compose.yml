@@ -24,14 +24,15 @@ services:
     container_name: CS-auth-api
     image: ${DOCKER_REGISTRY-}auth-api
     environment:
-      DATABASE_URL: "Host=postgres;Port=5432;Database=dcodeDB;Username=postgres;Password=123;"
+      DATABASE_URL: "Host=postgres;Port=5432;Database=docdeDB;Username=postgres;Password=123;"
     networks:
       - dcodenetwork
     depends_on:
       - postgres
     ports:
       - "5001:8080"
-    command: ["dotnet", "ef", "database", "update"]
+    command: >
+      bash -c "until dotnet ef database update; do echo 'Waiting for postgres...'; sleep 5; done && dotnet AuthAPI.dll"
 
   gateway:
     build:
