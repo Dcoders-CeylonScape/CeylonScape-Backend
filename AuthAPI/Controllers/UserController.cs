@@ -69,8 +69,7 @@ public class UserController : Controller
         {
             return NotFound();
         }
-        
-        if(userDto.Nic != string.Empty) user.Nic = userDto.Nic;
+
         if(userDto.FirstName != string.Empty) user.FirstName = userDto.FirstName;
         if(userDto.LastName != string.Empty) user.LastName = userDto.LastName;
         if(userDto.MobileNumber != string.Empty) user.MobileNumber = userDto.MobileNumber;

@@ -38,7 +38,6 @@ public class AuthController : ControllerBase
                 user.MobileNumber,
                 user.Email,
                 Image = "profile.png",
-                user.Nic,
                 JwtToken = token });
         }
 

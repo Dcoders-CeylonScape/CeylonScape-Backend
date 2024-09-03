@@ -10,6 +10,5 @@ public class AuthAPIContext : DbContext
     }
 
     public DbSet<User> User { get; set; } = null!;
-    
 
 }
