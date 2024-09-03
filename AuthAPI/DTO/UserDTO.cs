@@ -7,8 +7,6 @@ public class UserDTO
 {
     [Required] public long Id { get; set; }
 
-    public string Nic { get; set; } = string.Empty;
-
     public string FirstName { get; set; } = string.Empty;
 
     public string LastName { get; set; } = string.Empty;
@@ -28,7 +26,6 @@ public class UserDTO
         return new UserDTO
         {
             Id = user.Id,
-            Nic = user.Nic,
             FirstName = user.FirstName,
             LastName = user.LastName,
             MobileNumber = user.MobileNumber,
@@ -42,7 +39,6 @@ public class UserDTO
     {
         return new User
         {
-            Nic = Nic,
             FirstName = FirstName,
             LastName = LastName,
             MobileNumber = MobileNumber,
