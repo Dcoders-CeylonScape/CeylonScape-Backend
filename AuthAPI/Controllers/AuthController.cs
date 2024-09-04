@@ -32,7 +32,7 @@ public class AuthController : ControllerBase
             
             var token = GenerateJwtToken(user.Email);
             return Ok(new {
-                user.Id,
+                user.UserID,
                 user.FirstName,
                 user.LastName,
                 user.MobileNumber,

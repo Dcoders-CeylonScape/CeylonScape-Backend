@@ -5,7 +5,7 @@ namespace AuthAPI.DTO;
 
 public class UserDTO
 {
-    [Required] public long Id { get; set; }
+    [Required] public int UserID { get; set; }
 
     public string FirstName { get; set; } = string.Empty;
 
@@ -25,7 +25,7 @@ public class UserDTO
     {
         return new UserDTO
         {
-            Id = user.Id,
+            UserID = user.UserID,
             FirstName = user.FirstName,
             LastName = user.LastName,
             MobileNumber = user.MobileNumber,

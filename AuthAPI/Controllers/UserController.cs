@@ -51,7 +51,7 @@ public class UserController : Controller
         _context.User.Add(user);
         await _context.SaveChangesAsync();
 
-        return CreatedAtAction(nameof(GetUser), new { id = user.Id }, UserDTO.FromUser(user));
+        return CreatedAtAction(nameof(GetUser), new { id = user.UserID }, UserDTO.FromUser(user));
     }
 
     // PUT: User/5
@@ -59,7 +59,7 @@ public class UserController : Controller
     [Authorize]
     public async Task<ActionResult<UserDTO>> UpdateUser(long id, UserDTO userDto)
     {
-        if (id != userDto.Id)
+        if (id != userDto.UserID)
         {
             return BadRequest();
         }
@@ -106,6 +106,6 @@ public class UserController : Controller
 
     private bool UserExists(long id)
     {
-        return _context.User.Any(e => e.Id == id);
+        return _context.User.Any(e => e.UserID == id);
     }
 }
