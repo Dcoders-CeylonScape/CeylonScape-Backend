@@ -1,8 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\AuthAPI"
+    "\\AuthAPI",
+    "\\AuthAPI\\Controllers",
+    "\\AuthAPI\\DTO",
+    "\\AuthAPI\\Models",
+    "\\VisaAPI",
+    "\\VisaAPI\\DTO"
   ],
-  "SelectedNode": "\\docker-compose.yml",
+  "SelectedNode": "\\CeylonScape.sln",
   "PreviewInSolutionExplorer": false
 }
