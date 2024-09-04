@@ -1,4 +1,5 @@
 ﻿using System;
+using AuthAPI.Models;
 
 
 public class EmergencyContactDTO
@@ -11,17 +12,17 @@ public class EmergencyContactDTO
     public bool IsSrilanka { get; set; }
     public int UserInfoId { get; set; }
 
-    public static EmergencyContactDTO ToDTO(AuthAPI.Models. emergencyContract )
+    public static EmergencyContactDTO ToDTO(AuthAPI.Models.EmergencyContact emergencyContract )
     {
         return new EmergencyContactDTO
         {
-            Id = emergencyContact.Id,
-            Name = emergencyContact.Name,
-            Address = emergencyContact.Address,
-            Contact = emergencyContact.Contact,
-            Relationship = emergencyContact.Relationship,
-            IsSrilanka = emergencyContact.IsSrilanka,
-            UserInfoId = emergencyContact.UserInfoId
+            Id = emergencyContract.Id,
+            Name = emergencyContract.Name,
+            Address = emergencyContract.Address,
+            Contact = emergencyContract.Contact,
+            Relationship = emergencyContract.Relationship,
+            IsSrilanka = emergencyContract.IsSrilanka,
+            UserInfoId = emergencyContract.UserInfoId
         };
     }
 

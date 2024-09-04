@@ -1,3 +1,7 @@
+using AuthAPI;
+using Microsoft.EntityFrameworkCore;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,6 +12,7 @@ var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");  // use th
 // Add services to the container.
 
 builder.Services.AddControllers();
+// builder.Services.AddDbContext<>()
 builder.Services.AddDbContext<AuthAPIContext>(
     options => options.UseNpgsql(databaseUrl)
 );
