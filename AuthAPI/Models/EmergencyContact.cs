@@ -21,18 +21,14 @@ public class EmergencyContact
     [MaxLength(50)]
     public string? Relationship { get; set; }
 
-    public bool IsSrilanka { get; set; }
-    
+    public string? Support { get; set; }
+
     public double UsdAmount { get; set; }
     
     public double SpendableAmount { get; set; }
     
     public string nameOfCreditCard { get; set; }
     
-    
-    
-    
-
     public int UserInfoId { get; set; }
     public UserInfo? UserInfo { get; set; }
 }

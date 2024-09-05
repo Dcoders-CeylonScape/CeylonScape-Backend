@@ -19,9 +19,6 @@ public class UserInfo
    
     public string Image { get; set; }
     
-   
-
-    
     [MaxLength(10)]
     public string? Gender { get; set; }
 
@@ -46,7 +43,7 @@ public class UserInfo
     [MaxLength(20)]
     public string Mobile { get; set; }
     
-    public int periodofvisit{ get; set;}
+    public int Periodofvisit{ get; set;}
     
     [MaxLength(100)]
     public string Email { get; set; }
@@ -70,8 +67,6 @@ public class UserInfo
 
     public ICollection<EntryVisaInfo>? EntryVisas { get; set; }
 
-    public ICollection<Children>? Children { get; set; }
-
     public Profession? Profession { get; set; }
 
     public ResidenceVisaInfo? ResidenceVisaInfo { get; set; }
@@ -79,7 +74,6 @@ public class UserInfo
     [ForeignKey("User")]
     public int UserID { get; set; }
  
-    // user extention
 }
 
 public enum CivilStatus

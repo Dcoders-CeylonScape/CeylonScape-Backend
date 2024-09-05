@@ -9,11 +9,9 @@ public class EmergencyContactDTO
     public string Address { get; set; }
     public string Contact { get; set; }
     public string Relationship { get; set; }
-    public bool IsSrilanka { get; set; }
     public int UserInfoId { get; set; }
-    
     public string nameOfCreditCard { get; set; }
-    
+    public string Support { get; set; }
     public double SpendableAmount { get; set; }
     public double UsdAmount { get; set; }
 
@@ -28,8 +26,8 @@ public class EmergencyContactDTO
             Contact = emergencyContract.Contact,
             UsdAmount=emergencyContract.UsdAmount,
             Relationship = emergencyContract.Relationship,
-            IsSrilanka = emergencyContract.IsSrilanka,
             UserInfoId = emergencyContract.UserInfoId,
+            Support = emergencyContract.Support,
             SpendableAmount=emergencyContract.SpendableAmount
         };
     }
@@ -44,9 +42,9 @@ public class EmergencyContactDTO
             SpendableAmount=dto.SpendableAmount,
             Address = dto.Address,
             Contact = dto.Contact,
+            Support= dto.Support,
             UsdAmount=dto.UsdAmount,
             Relationship = dto.Relationship,
-            IsSrilanka = dto.IsSrilanka,
             UserInfoId = dto.UserInfoId
         };
     }

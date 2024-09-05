@@ -17,8 +17,7 @@ namespace VisaAPI.DTO
         public string Peculiarity { get; set; }
         public string DomicileAddress { get; set; }
         public string AddressDuringSriLanka { get; set; }
-        
-        public int periodofvisit{ get; set;}
+        public int Periodofvisit{ get; set;}
         public string Telephone { get; set; }
         public string Mobile { get; set; }
        
@@ -54,7 +53,7 @@ namespace VisaAPI.DTO
                 Image=userInfo.Image,
                 Gender = userInfo.Gender,
                 DOB = userInfo.DOB,
-                periodofvisit=userInfo.periodofvisit,
+                Periodofvisit=userInfo.Periodofvisit,
                 BirthCountry = userInfo.BirthCountry,
                 BirthPlace = userInfo.BirthPlace,
                 Height = userInfo.Height,
@@ -70,7 +69,6 @@ namespace VisaAPI.DTO
                 Spouse = SpouseInfoDTO.ToDTO(userInfo.Spouse),
                 Passport = PassportDTO.ToDTO(userInfo.Passport),
                 EntryVisas = userInfo.EntryVisas?.Select(ev => EntryVisaInfoDTO.ToDTO(ev)).ToList(),
-                Children = userInfo.Children?.Select(c => ChildrenDTO.ToDTO(c)).ToList(),
                 Profession = ProfessionDTO.ToDTO(userInfo.Profession),
                 ResidenceVisaInfo = ResidenceVisaInfoDTO.ToDTO(userInfo.ResidenceVisaInfo),
                 UserID = userInfo.UserID
@@ -88,7 +86,7 @@ namespace VisaAPI.DTO
                 WorkSpaceName=dto.WorkSpaceName,
                 Image=dto.Image,
                 DOB = dto.DOB,
-                periodofvisit = dto.periodofvisit,
+                Periodofvisit = dto.Periodofvisit,
                 BirthCountry = dto.BirthCountry,
                 BirthPlace = dto.BirthPlace,
                 Height = dto.Height,
@@ -104,7 +102,6 @@ namespace VisaAPI.DTO
                 Spouse = SpouseInfoDTO.FromDTO( dto.Spouse),
                 Passport = PassportDTO.FromDTO (dto.Passport),
                 EntryVisas = dto.EntryVisas?.Select(ev => EntryVisaInfoDTO.FromDTO(ev)).ToList(),
-                Children = dto.Children?.Select(c => ChildrenDTO.FromDTO(c)).ToList(),
                 Profession = ProfessionDTO.FromDTO( dto.Profession),
                 ResidenceVisaInfo = ResidenceVisaInfoDTO.FromDTO( dto.ResidenceVisaInfo),
                 UserID = dto.UserID

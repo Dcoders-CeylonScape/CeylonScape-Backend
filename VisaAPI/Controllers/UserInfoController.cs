@@ -36,7 +36,6 @@ namespace VisaAPI.Controllers
                 .Include(u => u.Passport) // Include Passport
                 .Include(u => u.EntryVisas) // Include EntryVisas
                     .ThenInclude(e => e.EntryVisaApprovals) // Load nested data in EntryVisas
-                .Include(u => u.Children) // Include Children
                 .Include(u => u.Profession) // Include Profession
                 .Include(u => u.ResidenceVisaInfo) // Include ResidenceVisaInfo
                     .ThenInclude(r => r.ResidenceVisaApprovals) // Load nested data in ResidenceVisaInfo
