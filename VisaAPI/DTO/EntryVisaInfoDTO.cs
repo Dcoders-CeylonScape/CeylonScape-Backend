@@ -5,15 +5,18 @@ using AuthAPI.Models;
 public class EntryVisaInfoDTO
 {
     public int Id { get; set; }
-    public string ObjectOfVisit { get; set; }
+    
     public string ModeOfTravel { get; set; }
     public DateTime DateOfLeaving { get; set; }
     public string LastPlaceOfResidence { get; set; }
     public DateTime DateOfIssue { get; set; }
     public string ResidenceVisaNumber { get; set; }
-    public bool HasRefusedVisa { get; set; }
+    public string HasRefusedVisa { get; set; }
+    
+    public int PeriodOfValidity { get; set; }
     public int UserInfoId { get; set; }
-
+    
+    public string LastObtainedVisa { get; set; }
     public List<EntryVisaApprovalDTO> EntryVisaApprovals { get; set; }
     public List<VisaExtensionInfoDTO> VisaExtensionInfos { get; set; }
 
@@ -22,7 +25,8 @@ public class EntryVisaInfoDTO
         return new EntryVisaInfoDTO
         {
             Id = entryVisaInfo.Id,
-            ObjectOfVisit = entryVisaInfo.ObjectOfVisit,
+            PeriodOfValidity=entryVisaInfo.PeriodOfValidity,
+            LastObtainedVisa=entryVisaInfo.LastObtainedVisa,
             ModeOfTravel = entryVisaInfo.ModeOfTravel,
             DateOfLeaving = entryVisaInfo.DateOfLeaving,
             LastPlaceOfResidence = entryVisaInfo.LastPlaceOfResidence,
@@ -44,7 +48,8 @@ public class EntryVisaInfoDTO
         return new EntryVisaInfo
         {
             Id = dto.Id,
-            ObjectOfVisit = dto.ObjectOfVisit,
+            PeriodOfValidity=dto.PeriodOfValidity,
+            LastObtainedVisa=dto.LastObtainedVisa,
             ModeOfTravel = dto.ModeOfTravel,
             DateOfLeaving = dto.DateOfLeaving,
             LastPlaceOfResidence = dto.LastPlaceOfResidence,

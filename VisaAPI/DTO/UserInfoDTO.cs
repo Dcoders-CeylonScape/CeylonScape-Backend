@@ -13,13 +13,15 @@ namespace VisaAPI.DTO
         public DateTime DOB { get; set; }
         public string BirthCountry { get; set; }
         public string BirthPlace { get; set; }
-        public double Height { get; set; }
+        public int Height { get; set; }
         public string Peculiarity { get; set; }
         public string DomicileAddress { get; set; }
         public string AddressDuringSriLanka { get; set; }
+        
+        public int periodofvisit{ get; set;}
         public string Telephone { get; set; }
         public string Mobile { get; set; }
-        public string? Fax { get; set; }
+       
         public string Email { get; set; }
         public CivilStatus CivilStatus { get; set; }
         public List<EmergencyContactDTO>? EmergencyContacts { get; set; }
@@ -28,7 +30,14 @@ namespace VisaAPI.DTO
         public PassportDTO? Passport { get; set; }
         public List<EntryVisaInfoDTO>? EntryVisas { get; set; }
         public List<ChildrenDTO>? Children { get; set; }
+        
+        public string WorkSpaceName { get; set; }
         public ProfessionDTO? Profession { get; set; }
+        public string Image { get; set; }
+        
+        public string WorkSpaceEmail { get; set; }
+        
+        public string WorkSpaceAddress { get; set; }
         public ResidenceVisaInfoDTO? ResidenceVisaInfo { get; set; }
         public int UserID { get; set; }
 
@@ -37,10 +46,15 @@ namespace VisaAPI.DTO
             return new UserInfoDTO
             {
                 Id = userInfo.Id,
+                WorkSpaceName=userInfo.WorkSpaceName,
+                WorkSpaceAddress=userInfo.WorkSpaceAddress,
+                WorkSpaceEmail=userInfo.WorkSpaceEmail,
                 FullName = userInfo.FullName,
                 Nationality = userInfo.Nationality,
+                Image=userInfo.Image,
                 Gender = userInfo.Gender,
                 DOB = userInfo.DOB,
+                periodofvisit=userInfo.periodofvisit,
                 BirthCountry = userInfo.BirthCountry,
                 BirthPlace = userInfo.BirthPlace,
                 Height = userInfo.Height,
@@ -49,7 +63,6 @@ namespace VisaAPI.DTO
                 AddressDuringSriLanka = userInfo.AddressDuringSriLanka,
                 Telephone = userInfo.Telephone,
                 Mobile = userInfo.Mobile,
-                Fax = userInfo.Fax,
                 Email = userInfo.Email,
                 CivilStatus = userInfo.CivilStatus,
                 EmergencyContacts = userInfo.EmergencyContacts?.Select(ec => EmergencyContactDTO.ToDTO(ec)).ToList(),
@@ -72,7 +85,10 @@ namespace VisaAPI.DTO
                 FullName = dto.FullName,
                 Nationality = dto.Nationality,
                 Gender = dto.Gender,
+                WorkSpaceName=dto.WorkSpaceName,
+                Image=dto.Image,
                 DOB = dto.DOB,
+                periodofvisit = dto.periodofvisit,
                 BirthCountry = dto.BirthCountry,
                 BirthPlace = dto.BirthPlace,
                 Height = dto.Height,
@@ -81,7 +97,6 @@ namespace VisaAPI.DTO
                 AddressDuringSriLanka = dto.AddressDuringSriLanka,
                 Telephone = dto.Telephone,
                 Mobile = dto.Mobile,
-                Fax = dto.Fax,
                 Email = dto.Email,
                 CivilStatus = dto.CivilStatus,
                 EmergencyContacts = dto.EmergencyContacts?.Select(ec => EmergencyContactDTO.FromDTO(ec)).ToList(),

@@ -11,18 +11,26 @@ public class EmergencyContactDTO
     public string Relationship { get; set; }
     public bool IsSrilanka { get; set; }
     public int UserInfoId { get; set; }
+    
+    public string nameOfCreditCard { get; set; }
+    
+    public double SpendableAmount { get; set; }
+    public double UsdAmount { get; set; }
 
     public static EmergencyContactDTO ToDTO(AuthAPI.Models.EmergencyContact emergencyContract )
     {
         return new EmergencyContactDTO
         {
             Id = emergencyContract.Id,
+            nameOfCreditCard=emergencyContract.nameOfCreditCard,
             Name = emergencyContract.Name,
             Address = emergencyContract.Address,
             Contact = emergencyContract.Contact,
+            UsdAmount=emergencyContract.UsdAmount,
             Relationship = emergencyContract.Relationship,
             IsSrilanka = emergencyContract.IsSrilanka,
-            UserInfoId = emergencyContract.UserInfoId
+            UserInfoId = emergencyContract.UserInfoId,
+            SpendableAmount=emergencyContract.SpendableAmount
         };
     }
 
@@ -32,8 +40,11 @@ public class EmergencyContactDTO
         {
             Id = dto.Id,
             Name = dto.Name,
+            nameOfCreditCard=dto.nameOfCreditCard,
+            SpendableAmount=dto.SpendableAmount,
             Address = dto.Address,
             Contact = dto.Contact,
+            UsdAmount=dto.UsdAmount,
             Relationship = dto.Relationship,
             IsSrilanka = dto.IsSrilanka,
             UserInfoId = dto.UserInfoId

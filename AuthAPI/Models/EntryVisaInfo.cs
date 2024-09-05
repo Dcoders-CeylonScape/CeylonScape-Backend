@@ -20,12 +20,17 @@ public class EntryVisaInfo
     [MaxLength(100)]
     public string LastPlaceOfResidence { get; set; }
 
+    public string LastObtainedVisa { get; set; }
     public DateTime DateOfIssue { get; set; }
+    
+    public int PeriodOfValidity { get; set; }
 
     [MaxLength(50)]
     public string ResidenceVisaNumber { get; set; }
 
-    public bool HasRefusedVisa { get; set; }
+    public string HasRefusedVisa { get; set; }
+    
+
 
     public ICollection<EntryVisaApproval> EntryVisaApprovals { get; set; }
 

@@ -23,7 +23,19 @@ public class Passport
     [Required]
     public DateTime DateOfExpiry { get; set; }
 
-    public bool IsPrevious { get; set; }
+    public string PreviousNumber { get; set; }
+
+    [Required]
+    [MaxLength(100)]
+    public string PreviousPlaceOfIssue { get; set; }
+
+    [Required]
+    public DateTime PreviousDateOfIssue { get; set; }
+
+    [Required]
+    public DateTime PreviousDateOfExpiry { get; set; }
+
+
 
     public UserInfo UserInfo { get; set; }
 }

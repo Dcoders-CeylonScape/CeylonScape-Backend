@@ -8,18 +8,29 @@ public class PassportDTO
     public string PlaceOfIssue { get; set; }
     public DateTime DateOfIssue { get; set; }
     public DateTime DateOfExpiry { get; set; }
-    public bool IsPrevious { get; set; }
+    
+    public string PreviousPlaceOfIssue { get; set; }
+    
+    public string PreviousNumber { get; set; }
+    
+    public DateTime PreviousDateOfExpiry { get; set; }
+    public DateTime PreviousDateOfIssue { get; set; }
+   
 
     public static PassportDTO ToDTO(Passport passport)
     {
         return new PassportDTO
         {
             UserInfoId = passport.UserInfoId,
+            PreviousPlaceOfIssue=passport.PreviousPlaceOfIssue,
+            PreviousDateOfIssue=passport.PreviousDateOfIssue,
             Number = passport.Number,
+            PreviousDateOfExpiry=passport.PreviousDateOfExpiry,
+            PreviousNumber=passport.PreviousNumber,
             PlaceOfIssue = passport.PlaceOfIssue,
             DateOfIssue = passport.DateOfIssue,
             DateOfExpiry = passport.DateOfExpiry,
-            IsPrevious = passport.IsPrevious
+       
         };
     }
 
@@ -29,10 +40,14 @@ public class PassportDTO
         {
             UserInfoId = dto.UserInfoId,
             Number = dto.Number,
+            PreviousPlaceOfIssue = dto.PreviousPlaceOfIssue,
+            PreviousDateOfExpiry=dto.PreviousDateOfExpiry,
+            PreviousDateOfIssue = dto.PreviousDateOfIssue,
+            PreviousNumber = dto.PreviousNumber,
             PlaceOfIssue = dto.PlaceOfIssue,
             DateOfIssue = dto.DateOfIssue,
             DateOfExpiry = dto.DateOfExpiry,
-            IsPrevious = dto.IsPrevious
+          
         };
     }
 }
