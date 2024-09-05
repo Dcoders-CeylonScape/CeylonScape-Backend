@@ -1,4 +1,6 @@
-﻿namespace AuthAPI.Models;
+﻿
+
+using AuthAPI.Models;
 
 namespace VisaAPI.DTO
 {
@@ -50,14 +52,14 @@ namespace VisaAPI.DTO
                 Fax = userInfo.Fax,
                 Email = userInfo.Email,
                 CivilStatus = userInfo.CivilStatus,
-                EmergencyContacts = userInfo.EmergencyContacts?.Select(ec => EmergencyContact.ToDTO(ec)).ToList(),
-                NaturalizationInfo = userInfo.NaturalizationInfo?.ToDTO(),
-                Spouse = userInfo.Spouse?.ToDTO(),
-                Passport = userInfo.Passport?.ToDTO(),
-                EntryVisas = userInfo.EntryVisas?.Select(ev => EntryVisaInfo.ToDTO(ev)).ToList(),
-                Children = userInfo.Children?.Select(c => Children.ToDTO(c)).ToList(),
-                Profession = userInfo.Profession?.ToDTO(),
-                ResidenceVisaInfo = userInfo.ResidenceVisaInfo?.ToDTO(),
+                EmergencyContacts = userInfo.EmergencyContacts?.Select(ec => EmergencyContactDTO.ToDTO(ec)).ToList(),
+                NaturalizationInfo = NaturalizationInfoDTO.ToDTO(userInfo.NaturalizationInfo),
+                Spouse = SpouseInfoDTO.ToDTO(userInfo.Spouse),
+                Passport = PassportDTO.ToDTO(userInfo.Passport),
+                EntryVisas = userInfo.EntryVisas?.Select(ev => EntryVisaInfoDTO.ToDTO(ev)).ToList(),
+                Children = userInfo.Children?.Select(c => ChildrenDTO.ToDTO(c)).ToList(),
+                Profession = ProfessionDTO.ToDTO(userInfo.Profession),
+                ResidenceVisaInfo = ResidenceVisaInfoDTO.ToDTO(userInfo.ResidenceVisaInfo),
                 UserID = userInfo.UserID
             };
         }
@@ -82,14 +84,14 @@ namespace VisaAPI.DTO
                 Fax = dto.Fax,
                 Email = dto.Email,
                 CivilStatus = dto.CivilStatus,
-                EmergencyContacts = dto.EmergencyContacts?.Select(ec => EmergencyContact.FromDTO(ec)).ToList(),
-                NaturalizationInfo = dto.NaturalizationInfo?.FromDTO(),
-                Spouse = dto.Spouse?.FromDTO(),
-                Passport = dto.Passport?.FromDTO(),
-                EntryVisas = dto.EntryVisas?.Select(ev => EntryVisaInfo.FromDTO(ev)).ToList(),
-                Children = dto.Children?.Select(c => Children.FromDTO(c)).ToList(),
-                Profession = dto.Profession?.FromDTO(),
-                ResidenceVisaInfo = dto.ResidenceVisaInfo?.FromDTO(),
+                EmergencyContacts = dto.EmergencyContacts?.Select(ec => EmergencyContactDTO.FromDTO(ec)).ToList(),
+                NaturalizationInfo = NaturalizationInfoDTO.FromDTO( dto.NaturalizationInfo),
+                Spouse = SpouseInfoDTO.FromDTO( dto.Spouse),
+                Passport = PassportDTO.FromDTO (dto.Passport),
+                EntryVisas = dto.EntryVisas?.Select(ev => EntryVisaInfoDTO.FromDTO(ev)).ToList(),
+                Children = dto.Children?.Select(c => ChildrenDTO.FromDTO(c)).ToList(),
+                Profession = ProfessionDTO.FromDTO( dto.Profession),
+                ResidenceVisaInfo = ResidenceVisaInfoDTO.FromDTO( dto.ResidenceVisaInfo),
                 UserID = dto.UserID
             };
         }

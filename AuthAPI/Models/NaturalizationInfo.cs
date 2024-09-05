@@ -6,6 +6,8 @@ public class NaturalizationInfo
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int id;
+
     public int UserInfoId { get; set; }
 
     public bool IsNaturalized { get; set; }

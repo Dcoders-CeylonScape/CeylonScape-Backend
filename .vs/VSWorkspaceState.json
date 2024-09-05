@@ -4,10 +4,9 @@
     "\\AuthAPI",
     "\\AuthAPI\\Controllers",
     "\\AuthAPI\\DTO",
-    "\\AuthAPI\\Models",
     "\\VisaAPI",
     "\\VisaAPI\\DTO"
   ],
-  "SelectedNode": "\\CeylonScape.sln",
+  "SelectedNode": "\\AuthAPI\\DTO\\NaturalizationInfoDTO.cs",
   "PreviewInSolutionExplorer": false
 }
