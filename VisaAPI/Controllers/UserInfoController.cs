@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using AuthAPI;
 using AuthAPI.Models;
 using VisaAPI.DTO;
+using Microsoft.AspNetCore.Authorization;
 
 namespace VisaAPI.Controllers
 {
@@ -23,6 +24,7 @@ namespace VisaAPI.Controllers
         }
 
         // GET: api/UserInfo
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<UserInfoDTO>>> GetUserInfos()
         {

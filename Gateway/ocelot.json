@@ -74,7 +74,7 @@
           "Port": 8080
         }
       ],
-      "DownstreamPathTemplate": "/api/Auth/Login"
+      "DownstreamPathTemplate": "/Auth/Login"
     }
   ],
   "GlobalConfiguration": {

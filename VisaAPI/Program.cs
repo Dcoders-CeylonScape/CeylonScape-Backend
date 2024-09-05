@@ -1,5 +1,8 @@
 using AuthAPI;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +19,33 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<AuthAPIContext>(
     options => options.UseNpgsql(databaseUrl)
 );
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    var key = Environment.GetEnvironmentVariable("JWT_KEY");  // Secret key from environment variable
+    var issuer = Environment.GetEnvironmentVariable("JWT_ISSUER");  // JWT Issuer from environment variable
+    var audience = Environment.GetEnvironmentVariable("JWT_AUDIENCE");  // JWT Audience from environment variable
+
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = issuer,
+        ValidAudience = audience,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(key)),
+        ClockSkew = TimeSpan.Zero  // Remove delay of token expiration
+    };
+});
+
+// Add Authorization
+builder.Services.AddAuthorization();
 
 
 
@@ -35,6 +65,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
