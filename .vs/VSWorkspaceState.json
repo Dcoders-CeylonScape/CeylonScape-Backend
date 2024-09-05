@@ -4,9 +4,11 @@
     "\\AuthAPI",
     "\\AuthAPI\\Controllers",
     "\\AuthAPI\\DTO",
+    "\\Gateway",
     "\\VisaAPI",
+    "\\VisaAPI\\Controllers",
     "\\VisaAPI\\DTO"
   ],
-  "SelectedNode": "\\AuthAPI\\DTO\\NaturalizationInfoDTO.cs",
+  "SelectedNode": "\\VisaAPI\\DTO\\ResidenceVisaApprovalDTO.cs",
   "PreviewInSolutionExplorer": false
 }

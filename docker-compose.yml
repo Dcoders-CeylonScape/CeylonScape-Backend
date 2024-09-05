@@ -34,6 +34,23 @@ services:
     command: >
       bash -c "until dotnet ef database update; do echo 'Waiting for postgres...'; sleep 5; done && dotnet AuthAPI.dll"
 
+  visa-api:
+    build:
+      context: .
+      dockerfile: ./VisaAPI/Dockerfile
+    container_name: CS-visa-api
+    image: ${DOCKER_REGISTRY-}visa-api
+    environment:
+      DATABASE_URL: "Host=postgres;Port=5432;Database=docdeDB;Username=postgres;Password=123;"
+    networks:
+      - dcodenetwork
+    depends_on:
+      - postgres
+    ports:
+      - "5003:8080"  # Changed to avoid port conflict with auth-api
+    command: >
+      dotnet VisaAPI.dll  # Removed migration logic
+
   gateway:
     build:
       context: .
@@ -44,6 +61,6 @@ services:
       - dcodenetwork
     depends_on:
       - auth-api
-      - postgres
+      - visa-api
     ports:
       - "5000:8080"

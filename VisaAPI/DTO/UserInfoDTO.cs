@@ -19,17 +19,17 @@ namespace VisaAPI.DTO
         public string AddressDuringSriLanka { get; set; }
         public string Telephone { get; set; }
         public string Mobile { get; set; }
-        public string Fax { get; set; }
+        public string? Fax { get; set; }
         public string Email { get; set; }
         public CivilStatus CivilStatus { get; set; }
-        public List<EmergencyContactDTO> EmergencyContacts { get; set; }
-        public NaturalizationInfoDTO NaturalizationInfo { get; set; }
-        public SpouseInfoDTO Spouse { get; set; }
-        public PassportDTO Passport { get; set; }
-        public List<EntryVisaInfoDTO> EntryVisas { get; set; }
-        public List<ChildrenDTO> Children { get; set; }
-        public ProfessionDTO Profession { get; set; }
-        public ResidenceVisaInfoDTO ResidenceVisaInfo { get; set; }
+        public List<EmergencyContactDTO>? EmergencyContacts { get; set; }
+        public NaturalizationInfoDTO? NaturalizationInfo { get; set; }
+        public SpouseInfoDTO? Spouse { get; set; }
+        public PassportDTO? Passport { get; set; }
+        public List<EntryVisaInfoDTO>? EntryVisas { get; set; }
+        public List<ChildrenDTO>? Children { get; set; }
+        public ProfessionDTO? Profession { get; set; }
+        public ResidenceVisaInfoDTO? ResidenceVisaInfo { get; set; }
         public int UserID { get; set; }
 
         public static UserInfoDTO ToDTO(UserInfo userInfo)
@@ -68,7 +68,7 @@ namespace VisaAPI.DTO
         {
             return new UserInfo
             {
-                Id = dto.Id,
+                
                 FullName = dto.FullName,
                 Nationality = dto.Nationality,
                 Gender = dto.Gender,
