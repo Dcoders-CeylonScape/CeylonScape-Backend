@@ -30,7 +30,7 @@ namespace VisaAPI.DTO
         public ResidenceVisaInfoDTO ResidenceVisaInfo { get; set; }
         public int UserID { get; set; }
 
-        public static UserInfoDTO ToDTO( userInfo)
+        public static UserInfoDTO ToDTO(UserInfo userInfo)
         {
             return new UserInfoDTO
             {
