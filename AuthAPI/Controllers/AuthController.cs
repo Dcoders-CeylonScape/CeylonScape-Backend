@@ -20,7 +20,6 @@ public class AuthController : ControllerBase
             _context = context;
         }
 
-        // POST: api/Auth/Login
         [HttpPost("login")]
         public IActionResult Login(LoginDTO loginDto)
         {
@@ -44,13 +43,17 @@ public class AuthController : ControllerBase
         // Generate JWT token
         private string GenerateJwtToken(string email)
         {
-            var jwtSettings = _configuration.GetSection("JwtSettings");
-            var key = Encoding.ASCII.GetBytes(jwtSettings["Key"]);
-            var issuer = jwtSettings["Issuer"];
-            var audience = jwtSettings["Audience"];
-            var tokenExpiration = TimeSpan.FromMinutes(double.Parse(jwtSettings["DurationInMinutes"]));
+        //var jwtSettings = _configuration.GetSection("JwtSettings");
+        //var key = Encoding.ASCII.GetBytes(jwtSettings["Key"]);
+        //var issuer = jwtSettings["Issuer"];
+        //var audience = jwtSettings["Audience"];
+        //var tokenExpiration = TimeSpan.FromMinutes(double.Parse(jwtSettings["DurationInMinutes"]));
+        var key =Encoding.ASCII.GetBytes( Environment.GetEnvironmentVariable("JWT_KEY"));
+        var issuer = Environment.GetEnvironmentVariable("JWT_ISSUER");
+        var audience = Environment.GetEnvironmentVariable("JWT_AUDIENCE");
+        var tokenExpiration =TimeSpan.FromMinutes(double.Parse( Environment.GetEnvironmentVariable("JWT_DURATION_IN_MINUTES")));
 
-            var claims = new[]
+        var claims = new[]
             {
                 new Claim(ClaimTypes.Email, email),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())

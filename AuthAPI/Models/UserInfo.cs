@@ -12,17 +12,17 @@ public class UserInfo
 
     [Required]
     [MaxLength(100)]
-    public string FullName { get; set; }
+    public string? FullName { get; set; }
 
     [MaxLength(50)]
-    public string Nationality { get; set; }
+    public string? Nationality { get; set; }
 
     [MaxLength(10)]
-    public string Gender { get; set; }
+    public string? Gender { get; set; }
 
     public DateTime DOB { get; set; }
-    public string BirthCountry { get; set; }
-    public string BirthPlace { get; set; }
+    public string? BirthCountry { get; set; }
+    public string? BirthPlace { get; set; }
 
     public double Height { get; set; }
 
@@ -49,21 +49,21 @@ public class UserInfo
 
     public CivilStatus CivilStatus { get; set; }
 
-    public ICollection<EmergencyContact> EmergencyContacts { get; set; }
+    public ICollection<EmergencyContact>? EmergencyContacts { get; set; }
 
-    public NaturalizationInfo NaturalizationInfo { get; set; }
+    public NaturalizationInfo? NaturalizationInfo { get; set; }
 
-    public SpouseInfo Spouse { get; set; }
+    public SpouseInfo? Spouse { get; set; }
 
-    public Passport Passport { get; set; }
+    public Passport? Passport { get; set; }
 
-    public ICollection<EntryVisaInfo> EntryVisas { get; set; }
+    public ICollection<EntryVisaInfo>? EntryVisas { get; set; }
 
-    public ICollection<Children> Children { get; set; }
+    public ICollection<Children>? Children { get; set; }
 
-    public Profession Profession { get; set; }
+    public Profession? Profession { get; set; }
 
-    public ResidenceVisaInfo ResidenceVisaInfo { get; set; }
+    public ResidenceVisaInfo? ResidenceVisaInfo { get; set; }
     
     [ForeignKey("User")]
     public int UserID { get; set; }

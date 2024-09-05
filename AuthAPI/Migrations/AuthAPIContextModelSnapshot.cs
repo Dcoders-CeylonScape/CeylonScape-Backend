@@ -213,9 +213,11 @@ namespace AuthAPI.Migrations
 
             modelBuilder.Entity("AuthAPI.Models.NaturalizationInfo", b =>
                 {
-                    b.Property<int>("UserInfoId")
+                    b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
 
                     b.Property<string>("FormerNationality")
                         .IsRequired()
@@ -233,16 +235,24 @@ namespace AuthAPI.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 
-                    b.HasKey("UserInfoId");
+                    b.Property<int>("UserInfoId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("UserInfoId")
+                        .IsUnique();
 
                     b.ToTable("NaturalizationInfos");
                 });
 
             modelBuilder.Entity("AuthAPI.Models.Passport", b =>
                 {
-                    b.Property<int>("UserInfoId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("DateOfExpiry")
                         .HasColumnType("timestamp with time zone");
@@ -263,7 +273,13 @@ namespace AuthAPI.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 
-                    b.HasKey("UserInfoId");
+                    b.Property<int>("UserInfoId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserInfoId")
+                        .IsUnique();
 
                     b.ToTable("Passports");
                 });
@@ -376,9 +392,11 @@ namespace AuthAPI.Migrations
 
             modelBuilder.Entity("AuthAPI.Models.SpouseInfo", b =>
                 {
-                    b.Property<int>("UserInfoId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("DateOfExpiry")
                         .HasColumnType("timestamp with time zone");
@@ -406,7 +424,13 @@ namespace AuthAPI.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("character varying(255)");
 
-                    b.HasKey("UserInfoId");
+                    b.Property<int>("UserInfoId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserInfoId")
+                        .IsUnique();
 
                     b.ToTable("SpouseInfos");
                 });

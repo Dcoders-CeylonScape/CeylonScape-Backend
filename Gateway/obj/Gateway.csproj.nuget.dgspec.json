@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\DcodeLabs\\CeylonScape\\CeylonScape\\Gateway\\Gateway.csproj": {}
+    "E:\\DcodeLabs\\CeylonScape\\v2\\CeylonScape-Backend\\Gateway\\Gateway.csproj": {}
   },
   "projects": {
-    "E:\\DcodeLabs\\CeylonScape\\CeylonScape\\Gateway\\Gateway.csproj": {
+    "E:\\DcodeLabs\\CeylonScape\\v2\\CeylonScape-Backend\\Gateway\\Gateway.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\DcodeLabs\\CeylonScape\\CeylonScape\\Gateway\\Gateway.csproj",
+        "projectUniqueName": "E:\\DcodeLabs\\CeylonScape\\v2\\CeylonScape-Backend\\Gateway\\Gateway.csproj",
         "projectName": "Gateway",
-        "projectPath": "E:\\DcodeLabs\\CeylonScape\\CeylonScape\\Gateway\\Gateway.csproj",
+        "projectPath": "E:\\DcodeLabs\\CeylonScape\\v2\\CeylonScape-Backend\\Gateway\\Gateway.csproj",
         "packagesPath": "C:\\Users\\Sahan\\.nuget\\packages\\",
-        "outputPath": "E:\\DcodeLabs\\CeylonScape\\CeylonScape\\Gateway\\obj\\",
+        "outputPath": "E:\\DcodeLabs\\CeylonScape\\v2\\CeylonScape-Backend\\Gateway\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\vs\\vs tools\\NuGetPackages"

@@ -30,6 +30,51 @@
         }
       ],
       "DownstreamPathTemplate": "/User/{id}"
+    },
+    {
+      "UpstreamPathTemplate": "/UserInfo",
+      "UpstreamHttpMethod": [
+        "GET",
+        "POST"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "visa-api",
+          "Port": 8080
+        }
+      ],
+      "DownstreamPathTemplate": "/api/UserInfo"
+    },
+    {
+      "UpstreamPathTemplate": "/UserInfo/{id}",
+      "UpstreamHttpMethod": [
+        "GET",
+        "DELETE",
+        "PUT"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "visa-api",
+          "Port": 8080
+        }
+      ],
+      "DownstreamPathTemplate": "/api/UserInfo/{id}"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Auth/Login",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "auth-api",
+          "Port": 8080
+        }
+      ],
+      "DownstreamPathTemplate": "/Auth/Login"
     }
   ],
   "GlobalConfiguration": {

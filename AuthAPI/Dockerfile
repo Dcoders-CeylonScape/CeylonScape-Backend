@@ -4,6 +4,11 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
+ENV JWT_KEY="RaIdJifRxeDVT9XHwkQqwEvQpHd2TrI4"
+ENV JWT_ISSUER="kidds"
+ENV JWT_AUDIENCE="sritel"
+ENV JWT_DURATION_IN_MINUTES=60
+
 # Build image for compiling the application
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src

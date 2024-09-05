@@ -19,10 +19,10 @@ public class EmergencyContact
     public string Contact { get; set; }
 
     [MaxLength(50)]
-    public string Relationship { get; set; }
+    public string? Relationship { get; set; }
 
     public bool IsSrilanka { get; set; }
 
     public int UserInfoId { get; set; }
-    public UserInfo UserInfo { get; set; }
+    public UserInfo? UserInfo { get; set; }
 }
