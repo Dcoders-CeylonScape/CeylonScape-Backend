@@ -16,7 +16,12 @@ public class UserInfo
 
     [MaxLength(50)]
     public string? Nationality { get; set; }
+   
+    public string Image { get; set; }
+    
+   
 
+    
     [MaxLength(10)]
     public string? Gender { get; set; }
 
@@ -24,7 +29,7 @@ public class UserInfo
     public string? BirthCountry { get; set; }
     public string? BirthPlace { get; set; }
 
-    public double Height { get; set; }
+    public int Height { get; set; }
 
     [MaxLength(255)]
     public string Peculiarity { get; set; }
@@ -40,12 +45,18 @@ public class UserInfo
 
     [MaxLength(20)]
     public string Mobile { get; set; }
-
-    [MaxLength(20)]
-    public string Fax { get; set; }
-
+    
+    public int periodofvisit{ get; set;}
+    
     [MaxLength(100)]
     public string Email { get; set; }
+    
+    [MaxLength(100)]
+    public string WorkSpaceName { get; set; }
+
+    public string WorkSpaceAddress { get; set; }
+    
+    public string WorkSpaceEmail { get; set; }
 
     public CivilStatus CivilStatus { get; set; }
 

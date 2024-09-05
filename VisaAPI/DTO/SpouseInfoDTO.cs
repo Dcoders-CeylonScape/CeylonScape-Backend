@@ -9,7 +9,7 @@ public class SpouseInfoDTO
     public string PostalAddress { get; set; }
     public string PassportNumber { get; set; }
     public DateTime DateOfExpiry { get; set; }
-    public bool IsPrevious { get; set; }
+  
 
     public static SpouseInfoDTO ToDTO(SpouseInfo spouseInfo)
     {
@@ -21,7 +21,7 @@ public class SpouseInfoDTO
             PostalAddress = spouseInfo.PostalAddress,
             PassportNumber = spouseInfo.PassportNumber,
             DateOfExpiry = spouseInfo.DateOfExpiry,
-            IsPrevious = spouseInfo.IsPrevious
+            
         };
     }
 
@@ -35,7 +35,7 @@ public class SpouseInfoDTO
             PostalAddress = dto.PostalAddress,
             PassportNumber = dto.PassportNumber,
             DateOfExpiry = dto.DateOfExpiry,
-            IsPrevious = dto.IsPrevious
+     
         };
     }
 }
