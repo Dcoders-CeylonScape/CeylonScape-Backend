@@ -84,6 +84,8 @@ namespace VisaAPI.DTO
                 Nationality = dto.Nationality,
                 Gender = dto.Gender,
                 WorkSpaceName=dto.WorkSpaceName,
+                WorkSpaceEmail=dto.WorkSpaceEmail,
+                WorkSpaceAddress=dto.WorkSpaceAddress,
                 Image=dto.Image,
                 DOB = dto.DOB,
                 Periodofvisit = dto.Periodofvisit,

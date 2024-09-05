@@ -13,6 +13,8 @@ public class EntryVisaInfoDTO
     public string ResidenceVisaNumber { get; set; }
     public string HasRefusedVisa { get; set; }
 
+    public string ObjectOfVisit { get; set; }
+
     public int PeriodOfVisitVisa { get; set; }
     public int PeriodOfValidity { get; set; }
     public int UserInfoId { get; set; }
@@ -35,6 +37,7 @@ public class EntryVisaInfoDTO
             DateOfIssue = entryVisaInfo.DateOfIssue,
             ResidenceVisaNumber = entryVisaInfo.ResidenceVisaNumber,
             HasRefusedVisa = entryVisaInfo.HasRefusedVisa,
+            ObjectOfVisit= entryVisaInfo.ObjectOfVisit,
             UserInfoId = entryVisaInfo.UserInfoId,
             EntryVisaApprovals = entryVisaInfo.EntryVisaApprovals != null
                 ? new List<EntryVisaApprovalDTO>(entryVisaInfo.EntryVisaApprovals.Select(eva => EntryVisaApprovalDTO.ToDTO(eva)))
@@ -54,6 +57,7 @@ public class EntryVisaInfoDTO
             LastObtainedVisa=dto.LastObtainedVisa,
             ModeOfTravel = dto.ModeOfTravel,
             DateOfLeaving = dto.DateOfLeaving,
+            ObjectOfVisit = dto.ObjectOfVisit,
             PeriodOfVisitVisa= dto.PeriodOfVisitVisa,
             LastPlaceOfResidence = dto.LastPlaceOfResidence,
             DateOfIssue = dto.DateOfIssue,
