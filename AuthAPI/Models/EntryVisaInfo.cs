@@ -25,6 +25,8 @@ public class EntryVisaInfo
     
     public int PeriodOfValidity { get; set; }
 
+    public int PeriodOfVisitVisa { get; set; }
+
     [MaxLength(50)]
     public string ResidenceVisaNumber { get; set; }
 
