@@ -54,11 +54,7 @@ public class AuthAPIContext : DbContext
             .HasMany(u => u.EntryVisas)
             .WithOne(e => e.UserInfo)
             .HasForeignKey(e => e.UserInfoId);
-
-        modelBuilder.Entity<UserInfo>()
-            .HasMany(u => u.Children)
-            .WithOne(c => c.UserInfo)
-            .HasForeignKey(c => c.UserInfoId);
+        
 
         modelBuilder.Entity<UserInfo>()
             .HasOne(u => u.Profession)
