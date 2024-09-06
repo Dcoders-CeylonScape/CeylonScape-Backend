@@ -3,12 +3,9 @@
     "",
     "\\AuthAPI",
     "\\AuthAPI\\Controllers",
-    "\\AuthAPI\\DTO",
     "\\Gateway",
-    "\\VisaAPI",
-    "\\VisaAPI\\Controllers",
-    "\\VisaAPI\\DTO"
+    "\\VisaAPI\\Controllers"
   ],
-  "SelectedNode": "\\VisaAPI\\DTO\\ResidenceVisaApprovalDTO.cs",
+  "SelectedNode": "\\CeylonScape.sln",
   "PreviewInSolutionExplorer": false
 }

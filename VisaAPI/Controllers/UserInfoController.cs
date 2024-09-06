@@ -38,7 +38,10 @@ namespace VisaAPI.Controllers
                     .ThenInclude(e => e.EntryVisaApprovals) // Load nested data in EntryVisas
                 .Include(u => u.Profession) // Include Profession
                 .Include(u => u.ResidenceVisaInfo) // Include ResidenceVisaInfo
-                    .ThenInclude(r => r.ResidenceVisaApprovals) // Load nested data in ResidenceVisaInfo
+                    .ThenInclude(r => r.ResidenceVisaApprovals)
+                .Include(u=>u.ResidenceVisaInfo)
+                    .ThenInclude(r=>r.Business)
+                    // Load nested data in ResidenceVisaInfo
                 .ToListAsync();
 
             // Convert the list of UserInfo to UserInfoDTO using ToDTO method
@@ -100,6 +103,14 @@ namespace VisaAPI.Controllers
         {
             // Convert the DTO to the UserInfo entity
             UserInfo userInfo = UserInfoDTO.FromDTO(userInfoDTO);
+
+            if (userInfo.EmergencyContacts != null)
+            {
+                foreach (var contact in userInfo.EmergencyContacts)
+                {
+                    contact.Id = 0; // Ensure that Id is not set to avoid PK conflict
+                }
+            }
 
             // Add the new userInfo object to the database
             _context.UserInfos.Add(userInfo);

@@ -20,8 +20,8 @@ public class EntryVisaInfoDTO
     public int UserInfoId { get; set; }
     
     public string LastObtainedVisa { get; set; }
-    public List<EntryVisaApprovalDTO> EntryVisaApprovals { get; set; }
-    public List<VisaExtensionInfoDTO> VisaExtensionInfos { get; set; }
+    public List<EntryVisaApprovalDTO>? EntryVisaApprovals { get; set; }
+    public List<VisaExtensionInfoDTO>? VisaExtensionInfos { get; set; }
 
     public static EntryVisaInfoDTO ToDTO(EntryVisaInfo entryVisaInfo)
     {

@@ -28,15 +28,8 @@ namespace VisaAPI.DTO
         public SpouseInfoDTO? Spouse { get; set; }
         public PassportDTO? Passport { get; set; }
         public List<EntryVisaInfoDTO>? EntryVisas { get; set; }
-        public List<ChildrenDTO>? Children { get; set; }
-        
-        public string WorkSpaceName { get; set; }
         public ProfessionDTO? Profession { get; set; }
         public string Image { get; set; }
-        
-        public string WorkSpaceEmail { get; set; }
-        
-        public string WorkSpaceAddress { get; set; }
         public ResidenceVisaInfoDTO? ResidenceVisaInfo { get; set; }
         public int UserID { get; set; }
 
@@ -45,9 +38,6 @@ namespace VisaAPI.DTO
             return new UserInfoDTO
             {
                 Id = userInfo.Id,
-                WorkSpaceName=userInfo.WorkSpaceName,
-                WorkSpaceAddress=userInfo.WorkSpaceAddress,
-                WorkSpaceEmail=userInfo.WorkSpaceEmail,
                 FullName = userInfo.FullName,
                 Nationality = userInfo.Nationality,
                 Image=userInfo.Image,
@@ -83,9 +73,6 @@ namespace VisaAPI.DTO
                 FullName = dto.FullName,
                 Nationality = dto.Nationality,
                 Gender = dto.Gender,
-                WorkSpaceName=dto.WorkSpaceName,
-                WorkSpaceEmail=dto.WorkSpaceEmail,
-                WorkSpaceAddress=dto.WorkSpaceAddress,
                 Image=dto.Image,
                 DOB = dto.DOB,
                 Periodofvisit = dto.Periodofvisit,
