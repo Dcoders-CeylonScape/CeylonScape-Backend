@@ -1,6 +1,34 @@
 {
   "Routes": [
     {
+      "UpstreamPathTemplate": "/Admins",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "auth-api",
+          "Port": 8080
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Admins"
+    },
+    {
+      "UpstreamPathTemplate": "/AdminAuth/login",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "auth-api",
+          "Port": 8080
+        }
+      ],
+      "DownstreamPathTemplate": "/api/AdminAuth/login"
+    },
+    {
       "UpstreamPathTemplate": "/User",
       "UpstreamHttpMethod": [
         "GET",

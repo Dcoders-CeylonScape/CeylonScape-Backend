@@ -24,7 +24,7 @@ namespace VisaAPI.Controllers
         }
 
         // GET: api/UserInfo
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<UserInfoDTO>>> GetUserInfos()
         {

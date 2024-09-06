@@ -27,9 +27,9 @@ builder.Services.AddAuthentication(options =>
 })
 .AddJwtBearer(options =>
 {
-    var key = Environment.GetEnvironmentVariable("JWT_KEY");  // Secret key from environment variable
-    var issuer = Environment.GetEnvironmentVariable("JWT_ISSUER");  // JWT Issuer from environment variable
-    var audience = Environment.GetEnvironmentVariable("JWT_AUDIENCE");  // JWT Audience from environment variable
+    var key = Environment.GetEnvironmentVariable("JWT_KEY");  
+    var issuer = Environment.GetEnvironmentVariable("JWT_ISSUER");  
+    var audience = Environment.GetEnvironmentVariable("JWT_AUDIENCE");  
 
     options.TokenValidationParameters = new TokenValidationParameters
     {

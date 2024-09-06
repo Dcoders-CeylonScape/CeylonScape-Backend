@@ -54,7 +54,7 @@ namespace AuthAPI.Controllers
             var claims = new[]
                 {
                 new Claim(ClaimTypes.Email, email),
-                 new Claim(ClaimTypes.Role, "Admin"),
+                new Claim(ClaimTypes.Role, "Admin"),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
 

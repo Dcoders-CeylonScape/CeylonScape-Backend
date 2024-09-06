@@ -4,8 +4,8 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");  // use this as the db url when using docker 
-var databaseUrl = "Host=localhost;Port=5000;Database=dcodeDB;Username=postgres;Password=123;";
+ var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");  // use this as the db url when using docker 
+//var databaseUrl = "Host=localhost;Port=5000;Database=dcodeDB;Username=postgres;Password=123;";
 
 // Add services to the container.
 
