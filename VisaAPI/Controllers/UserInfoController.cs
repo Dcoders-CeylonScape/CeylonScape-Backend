@@ -103,7 +103,7 @@ namespace VisaAPI.Controllers
         {
             // Convert the DTO to the UserInfo entity
             UserInfo userInfo = UserInfoDTO.FromDTO(userInfoDTO);
-
+            userInfo.CreatedAt = DateTime.Now;
             if (userInfo.EmergencyContacts != null)
             {
                 foreach (var contact in userInfo.EmergencyContacts)

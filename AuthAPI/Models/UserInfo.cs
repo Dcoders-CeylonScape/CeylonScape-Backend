@@ -47,7 +47,7 @@ public class UserInfo
     
     [MaxLength(100)]
     public string Email { get; set; }
-    
+
     public CivilStatus CivilStatus { get; set; }
 
     public ICollection<EmergencyContact>? EmergencyContacts { get; set; }
@@ -58,12 +58,16 @@ public class UserInfo
 
     public Passport? Passport { get; set; }
 
+    public DateTime? CreatedAt { get; set; }
+
     public ICollection<EntryVisaInfo>? EntryVisas { get; set; }
 
     public Profession? Profession { get; set; }
 
     public ResidenceVisaInfo? ResidenceVisaInfo { get; set; }
-    
+
+    public VisaRequestStatus? Status { get; set; }
+
     [ForeignKey("User")]
     public int UserID { get; set; }
  

@@ -24,7 +24,7 @@ public class AuthAPIContext : DbContext
     public DbSet<Business> Businesses { get; set; }
     public DbSet<VisaExtensionInfo> VisaExtensionInfos { get; set; }
     public DbSet<User> User { get; set; } = null!;
-
+    public DbSet<VisaRequestStatus> Statuses { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

@@ -20,7 +20,7 @@ namespace VisaAPI.DTO
         public int Periodofvisit{ get; set;}
         public string Telephone { get; set; }
         public string Mobile { get; set; }
-       
+        public DateTime? CreatedAt{ get; set; }
         public string Email { get; set; }
         public CivilStatus CivilStatus { get; set; }
         public List<EmergencyContactDTO>? EmergencyContacts { get; set; }
@@ -43,6 +43,7 @@ namespace VisaAPI.DTO
                 Image=userInfo.Image,
                 Gender = userInfo.Gender,
                 DOB = userInfo.DOB,
+                CreatedAt= userInfo.CreatedAt,
                 Periodofvisit=userInfo.Periodofvisit,
                 BirthCountry = userInfo.BirthCountry,
                 BirthPlace = userInfo.BirthPlace,
@@ -75,6 +76,7 @@ namespace VisaAPI.DTO
                 Gender = dto.Gender,
                 Image=dto.Image,
                 DOB = dto.DOB,
+                CreatedAt= dto.CreatedAt,
                 Periodofvisit = dto.Periodofvisit,
                 BirthCountry = dto.BirthCountry,
                 BirthPlace = dto.BirthPlace,
