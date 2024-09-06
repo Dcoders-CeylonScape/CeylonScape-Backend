@@ -3,9 +3,9 @@
     "",
     "\\AuthAPI",
     "\\AuthAPI\\Controllers",
-    "\\Gateway",
-    "\\VisaAPI\\Controllers"
+    "\\AuthAPI\\Models",
+    "\\Gateway"
   ],
-  "SelectedNode": "\\CeylonScape.sln",
+  "SelectedNode": "\\AuthAPI\\Models\\UserInfo.cs",
   "PreviewInSolutionExplorer": false
 }

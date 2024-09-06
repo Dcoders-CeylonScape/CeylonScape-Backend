@@ -99,7 +99,9 @@ namespace VisaAPI.DTO
                 EntryVisas = dto.EntryVisas?.Select(ev => EntryVisaInfoDTO.FromDTO(ev)).ToList(),
                 Profession = ProfessionDTO.FromDTO( dto.Profession),
                 ResidenceVisaInfo = ResidenceVisaInfoDTO.FromDTO( dto.ResidenceVisaInfo),
-                Status = VisaRequestStatusDTO.FromDTO(dto.VisaRequestStatus),
+                Status = dto.VisaRequestStatus != null
+                ? VisaRequestStatusDTO.FromDTO(dto.VisaRequestStatus)
+                : new VisaRequestStatus(),
                 UserID = dto.UserID
             };
         }

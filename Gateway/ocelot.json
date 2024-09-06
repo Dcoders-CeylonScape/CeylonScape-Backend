@@ -75,9 +75,40 @@
         }
       ],
       "DownstreamPathTemplate": "/Auth/Login"
+    },
+    {
+      "UpstreamPathTemplate": "/VisaRequestStatus",
+      "UpstreamHttpMethod": [
+        "GET",
+        "POST"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "visa-api",
+          "Port": 8080
+        }
+      ],
+      "DownstreamPathTemplate": "/api/VisaRequestStatus"
+    },
+    {
+      "UpstreamPathTemplate": "/VisaRequestStatus/{id}",
+      "UpstreamHttpMethod": [
+        "GET",
+        "PUT",
+        "DELETE"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "visa-api",
+          "Port": 8080
+        }
+      ],
+      "DownstreamPathTemplate": "/api/VisaRequestStatus/{id}"
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:5008"
+    "BaseUrl": "http://localhost:5000"
   }
 }

@@ -4,9 +4,9 @@ using AuthAPI.Models;
 public class VisaRequestStatusDTO
 {
     public int Id { get; set; }
-    public string? Reason { get; set; }
-    public string? Flag { get; set; }
-    public string? Status { get; set; }
+    public string Reason { get; set; }
+    public string Flag { get; set; }
+    public string Status { get; set; }
     public int AdminId { get; set; }
 
     public static VisaRequestStatusDTO ToDTO(VisaRequestStatus visaRequestStatus)

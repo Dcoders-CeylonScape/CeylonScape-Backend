@@ -41,6 +41,7 @@ namespace VisaAPI.Controllers
                     .ThenInclude(r => r.ResidenceVisaApprovals)
                 .Include(u=>u.ResidenceVisaInfo)
                     .ThenInclude(r=>r.Business)
+                .Include(u=>u.Status)
                     // Load nested data in ResidenceVisaInfo
                 .ToListAsync();
 
@@ -103,7 +104,7 @@ namespace VisaAPI.Controllers
         {
             // Convert the DTO to the UserInfo entity
             UserInfo userInfo = UserInfoDTO.FromDTO(userInfoDTO);
-            userInfo.CreatedAt = DateTime.Now;
+            userInfo.CreatedAt = DateTime.UtcNow;
             if (userInfo.EmergencyContacts != null)
             {
                 foreach (var contact in userInfo.EmergencyContacts)
