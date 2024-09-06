@@ -63,4 +63,4 @@ services:
       - auth-api
       - visa-api
     ports:
-      - "5000:8080"
+      - "5008:8080"

@@ -1,32 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "E:\\DcodeLabs\\CeylonScape\\v2\\CeylonScape-Backend\\Gateway\\Gateway.csproj": {}
+    "/Users/admin/Documents/Malindu/4th Year- UCSC/ceylonscape/CeylonScape-Backend/Gateway/Gateway.csproj": {}
   },
   "projects": {
-    "E:\\DcodeLabs\\CeylonScape\\v2\\CeylonScape-Backend\\Gateway\\Gateway.csproj": {
+    "/Users/admin/Documents/Malindu/4th Year- UCSC/ceylonscape/CeylonScape-Backend/Gateway/Gateway.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\DcodeLabs\\CeylonScape\\v2\\CeylonScape-Backend\\Gateway\\Gateway.csproj",
+        "projectUniqueName": "/Users/admin/Documents/Malindu/4th Year- UCSC/ceylonscape/CeylonScape-Backend/Gateway/Gateway.csproj",
         "projectName": "Gateway",
-        "projectPath": "E:\\DcodeLabs\\CeylonScape\\v2\\CeylonScape-Backend\\Gateway\\Gateway.csproj",
-        "packagesPath": "C:\\Users\\Sahan\\.nuget\\packages\\",
-        "outputPath": "E:\\DcodeLabs\\CeylonScape\\v2\\CeylonScape-Backend\\Gateway\\obj\\",
+        "projectPath": "/Users/admin/Documents/Malindu/4th Year- UCSC/ceylonscape/CeylonScape-Backend/Gateway/Gateway.csproj",
+        "packagesPath": "/Users/admin/.nuget/packages/",
+        "outputPath": "/Users/admin/Documents/Malindu/4th Year- UCSC/ceylonscape/CeylonScape-Backend/Gateway/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "D:\\vs\\vs tools\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Sahan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/admin/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,11 +32,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -74,7 +62,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -31,6 +31,9 @@ namespace VisaAPI.DTO
         public ProfessionDTO? Profession { get; set; }
         public string Image { get; set; }
         public ResidenceVisaInfoDTO? ResidenceVisaInfo { get; set; }
+        
+        public VisaRequestStatusDTO? VisaRequestStatus { get; set; }
+        
         public int UserID { get; set; }
 
         public static UserInfoDTO ToDTO(UserInfo userInfo)
@@ -62,6 +65,7 @@ namespace VisaAPI.DTO
                 EntryVisas = userInfo.EntryVisas?.Select(ev => EntryVisaInfoDTO.ToDTO(ev)).ToList(),
                 Profession = ProfessionDTO.ToDTO(userInfo.Profession),
                 ResidenceVisaInfo = ResidenceVisaInfoDTO.ToDTO(userInfo.ResidenceVisaInfo),
+                VisaRequestStatus=VisaRequestStatusDTO.ToDTO(userInfo.Status),
                 UserID = userInfo.UserID
             };
         }
@@ -95,6 +99,7 @@ namespace VisaAPI.DTO
                 EntryVisas = dto.EntryVisas?.Select(ev => EntryVisaInfoDTO.FromDTO(ev)).ToList(),
                 Profession = ProfessionDTO.FromDTO( dto.Profession),
                 ResidenceVisaInfo = ResidenceVisaInfoDTO.FromDTO( dto.ResidenceVisaInfo),
+                Status = VisaRequestStatusDTO.FromDTO(dto.VisaRequestStatus),
                 UserID = dto.UserID
             };
         }
