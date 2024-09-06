@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/Users/admin/Documents/Malindu/4th Year- UCSC/ceylonscape/CeylonScape-Backend/AuthAPI/AuthAPI.csproj": {}
+    "E:\\DcodeLabs\\CeylonScape\\v2\\CeylonScape-Backend\\AuthAPI\\AuthAPI.csproj": {}
   },
   "projects": {
-    "/Users/admin/Documents/Malindu/4th Year- UCSC/ceylonscape/CeylonScape-Backend/AuthAPI/AuthAPI.csproj": {
+    "E:\\DcodeLabs\\CeylonScape\\v2\\CeylonScape-Backend\\AuthAPI\\AuthAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/admin/Documents/Malindu/4th Year- UCSC/ceylonscape/CeylonScape-Backend/AuthAPI/AuthAPI.csproj",
+        "projectUniqueName": "E:\\DcodeLabs\\CeylonScape\\v2\\CeylonScape-Backend\\AuthAPI\\AuthAPI.csproj",
         "projectName": "AuthAPI",
-        "projectPath": "/Users/admin/Documents/Malindu/4th Year- UCSC/ceylonscape/CeylonScape-Backend/AuthAPI/AuthAPI.csproj",
-        "packagesPath": "/Users/admin/.nuget/packages/",
-        "outputPath": "/Users/admin/Documents/Malindu/4th Year- UCSC/ceylonscape/CeylonScape-Backend/AuthAPI/obj/",
+        "projectPath": "E:\\DcodeLabs\\CeylonScape\\v2\\CeylonScape-Backend\\AuthAPI\\AuthAPI.csproj",
+        "packagesPath": "C:\\Users\\Sahan\\.nuget\\packages\\",
+        "outputPath": "E:\\DcodeLabs\\CeylonScape\\v2\\CeylonScape-Backend\\AuthAPI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\vs\\vs tools\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/admin/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Sahan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -69,6 +76,10 @@
               "target": "Package",
               "version": "[1.19.4, )"
             },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[8.0.4, )"
@@ -97,7 +108,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -20,7 +20,7 @@ namespace VisaAPI.DTO
         public int Periodofvisit{ get; set;}
         public string Telephone { get; set; }
         public string Mobile { get; set; }
-       
+        public DateTime? CreatedAt{ get; set; }
         public string Email { get; set; }
         public CivilStatus CivilStatus { get; set; }
         public List<EmergencyContactDTO>? EmergencyContacts { get; set; }
@@ -28,16 +28,12 @@ namespace VisaAPI.DTO
         public SpouseInfoDTO? Spouse { get; set; }
         public PassportDTO? Passport { get; set; }
         public List<EntryVisaInfoDTO>? EntryVisas { get; set; }
-        public List<ChildrenDTO>? Children { get; set; }
-        
-        public string WorkSpaceName { get; set; }
         public ProfessionDTO? Profession { get; set; }
         public string Image { get; set; }
-        
-        public string WorkSpaceEmail { get; set; }
-        
-        public string WorkSpaceAddress { get; set; }
         public ResidenceVisaInfoDTO? ResidenceVisaInfo { get; set; }
+        
+        public VisaRequestStatusDTO? VisaRequestStatus { get; set; }
+        
         public int UserID { get; set; }
 
         public static UserInfoDTO ToDTO(UserInfo userInfo)
@@ -45,14 +41,12 @@ namespace VisaAPI.DTO
             return new UserInfoDTO
             {
                 Id = userInfo.Id,
-                WorkSpaceName=userInfo.WorkSpaceName,
-                WorkSpaceAddress=userInfo.WorkSpaceAddress,
-                WorkSpaceEmail=userInfo.WorkSpaceEmail,
                 FullName = userInfo.FullName,
                 Nationality = userInfo.Nationality,
                 Image=userInfo.Image,
                 Gender = userInfo.Gender,
                 DOB = userInfo.DOB,
+                CreatedAt= userInfo.CreatedAt,
                 Periodofvisit=userInfo.Periodofvisit,
                 BirthCountry = userInfo.BirthCountry,
                 BirthPlace = userInfo.BirthPlace,
@@ -71,6 +65,7 @@ namespace VisaAPI.DTO
                 EntryVisas = userInfo.EntryVisas?.Select(ev => EntryVisaInfoDTO.ToDTO(ev)).ToList(),
                 Profession = ProfessionDTO.ToDTO(userInfo.Profession),
                 ResidenceVisaInfo = ResidenceVisaInfoDTO.ToDTO(userInfo.ResidenceVisaInfo),
+                VisaRequestStatus=VisaRequestStatusDTO.ToDTO(userInfo.Status),
                 UserID = userInfo.UserID
             };
         }
@@ -83,9 +78,9 @@ namespace VisaAPI.DTO
                 FullName = dto.FullName,
                 Nationality = dto.Nationality,
                 Gender = dto.Gender,
-                WorkSpaceName=dto.WorkSpaceName,
                 Image=dto.Image,
                 DOB = dto.DOB,
+                CreatedAt= dto.CreatedAt,
                 Periodofvisit = dto.Periodofvisit,
                 BirthCountry = dto.BirthCountry,
                 BirthPlace = dto.BirthPlace,
@@ -104,6 +99,9 @@ namespace VisaAPI.DTO
                 EntryVisas = dto.EntryVisas?.Select(ev => EntryVisaInfoDTO.FromDTO(ev)).ToList(),
                 Profession = ProfessionDTO.FromDTO( dto.Profession),
                 ResidenceVisaInfo = ResidenceVisaInfoDTO.FromDTO( dto.ResidenceVisaInfo),
+                Status = dto.VisaRequestStatus != null
+                ? VisaRequestStatusDTO.FromDTO(dto.VisaRequestStatus)
+                : new VisaRequestStatus(),
                 UserID = dto.UserID
             };
         }

@@ -9,8 +9,8 @@ public class ResidenceVisaInfoDTO
     public string ReasonForApplyingVisa { get; set; }
     public string ApplyingFor { get; set; }
     public string SalaryIncome { get; set; }
-    public List<ResidenceVisaApprovalDTO> ResidenceVisaApprovals { get; set; }
-    public BusinessDTO Business { get; set; }
+    public List<ResidenceVisaApprovalDTO>? ResidenceVisaApprovals { get; set; }
+    public BusinessDTO? Business { get; set; }
     public int UserInfoId { get; set; }
 
     public static ResidenceVisaInfoDTO ToDTO(ResidenceVisaInfo residenceVisaInfo)

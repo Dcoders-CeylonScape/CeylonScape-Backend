@@ -1,6 +1,34 @@
 {
   "Routes": [
     {
+      "UpstreamPathTemplate": "/Admins",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "auth-api",
+          "Port": 8080
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Admins"
+    },
+    {
+      "UpstreamPathTemplate": "/AdminAuth/login",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "auth-api",
+          "Port": 8080
+        }
+      ],
+      "DownstreamPathTemplate": "/api/AdminAuth/login"
+    },
+    {
       "UpstreamPathTemplate": "/User",
       "UpstreamHttpMethod": [
         "GET",
@@ -75,6 +103,37 @@
         }
       ],
       "DownstreamPathTemplate": "/Auth/Login"
+    },
+    {
+      "UpstreamPathTemplate": "/VisaRequestStatus",
+      "UpstreamHttpMethod": [
+        "GET",
+        "POST"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "visa-api",
+          "Port": 8080
+        }
+      ],
+      "DownstreamPathTemplate": "/api/VisaRequestStatus"
+    },
+    {
+      "UpstreamPathTemplate": "/VisaRequestStatus/{id}",
+      "UpstreamHttpMethod": [
+        "GET",
+        "PUT",
+        "DELETE"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "visa-api",
+          "Port": 8080
+        }
+      ],
+      "DownstreamPathTemplate": "/api/VisaRequestStatus/{id}"
     }
   ],
   "GlobalConfiguration": {

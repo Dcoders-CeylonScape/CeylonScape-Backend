@@ -22,6 +22,31 @@ namespace AuthAPI.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("AuthAPI.Models.Admin", b =>
+                {
+                    b.Property<int>("AdminId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("AdminId"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("AdminId");
+
+                    b.ToTable("Admins");
+                });
+
             modelBuilder.Entity("AuthAPI.Models.Business", b =>
                 {
                     b.Property<int>("Id")
@@ -528,6 +553,9 @@ namespace AuthAPI.Migrations
                     b.Property<int>("CivilStatus")
                         .HasColumnType("integer");
 
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<DateTime>("DOB")
                         .HasColumnType("timestamp with time zone");
 
@@ -574,6 +602,9 @@ namespace AuthAPI.Migrations
                     b.Property<int>("Periodofvisit")
                         .HasColumnType("integer");
 
+                    b.Property<int?>("StatusId")
+                        .HasColumnType("integer");
+
                     b.Property<string>("Telephone")
                         .IsRequired()
                         .HasMaxLength(20)
@@ -582,20 +613,9 @@ namespace AuthAPI.Migrations
                     b.Property<int>("UserID")
                         .HasColumnType("integer");
 
-                    b.Property<string>("WorkSpaceAddress")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("WorkSpaceEmail")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("WorkSpaceName")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
-
                     b.HasKey("Id");
+
+                    b.HasIndex("StatusId");
 
                     b.ToTable("UserInfos");
                 });
@@ -642,6 +662,31 @@ namespace AuthAPI.Migrations
                     b.HasIndex("EntryVisaInfoId");
 
                     b.ToTable("VisaExtensionInfos");
+                });
+
+            modelBuilder.Entity("AuthAPI.Models.VisaRequestStatus", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AdminId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Flag")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Reason")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Statuses");
                 });
 
             modelBuilder.Entity("AuthAPI.Models.Business", b =>
@@ -763,6 +808,15 @@ namespace AuthAPI.Migrations
                         .IsRequired();
 
                     b.Navigation("UserInfo");
+                });
+
+            modelBuilder.Entity("AuthAPI.Models.UserInfo", b =>
+                {
+                    b.HasOne("AuthAPI.Models.VisaRequestStatus", "Status")
+                        .WithMany()
+                        .HasForeignKey("StatusId");
+
+                    b.Navigation("Status");
                 });
 
             modelBuilder.Entity("AuthAPI.Models.VisaExtensionInfo", b =>

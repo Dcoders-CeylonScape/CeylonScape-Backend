@@ -34,10 +34,10 @@ public class EntryVisaInfo
     
 
 
-    public ICollection<EntryVisaApproval> EntryVisaApprovals { get; set; }
+    public ICollection<EntryVisaApproval>? EntryVisaApprovals { get; set; }
 
     public int UserInfoId { get; set; }
     public UserInfo UserInfo { get; set; }
 
-    public ICollection<VisaExtensionInfo> VisaExtensionInfos { get; set; }
+    public ICollection<VisaExtensionInfo>? VisaExtensionInfos { get; set; }
 }

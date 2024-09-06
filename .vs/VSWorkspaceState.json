@@ -3,12 +3,9 @@
     "",
     "\\AuthAPI",
     "\\AuthAPI\\Controllers",
-    "\\AuthAPI\\DTO",
-    "\\Gateway",
-    "\\VisaAPI",
-    "\\VisaAPI\\Controllers",
-    "\\VisaAPI\\DTO"
+    "\\AuthAPI\\Models",
+    "\\Gateway"
   ],
-  "SelectedNode": "\\VisaAPI\\DTO\\ResidenceVisaApprovalDTO.cs",
+  "SelectedNode": "\\AuthAPI\\Models\\UserInfo.cs",
   "PreviewInSolutionExplorer": false
 }
