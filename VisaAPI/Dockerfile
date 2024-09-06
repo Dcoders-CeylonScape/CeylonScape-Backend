@@ -7,6 +7,7 @@ ENV JWT_KEY="RaIdJifRxeDVT9XHwkQqwEvQpHd2TrI4"
 ENV JWT_ISSUER="kidds"
 ENV JWT_AUDIENCE="sritel"
 ENV JWT_DURATION_IN_MINUTES=60
+ENV SECRET_KEY = "YourSecretKeyGoesHere12345678"
 
 # SDK image for building the app
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build

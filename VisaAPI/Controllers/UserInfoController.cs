@@ -9,6 +9,9 @@ using AuthAPI;
 using AuthAPI.Models;
 using VisaAPI.DTO;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Cryptography;
+using VisaAPI.Utils;
+using System.Text;
 
 namespace VisaAPI.Controllers
 {
@@ -28,29 +31,65 @@ namespace VisaAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<UserInfoDTO>>> GetUserInfos()
         {
-            // Load related data using Include and ThenInclude for nested properties
+           
             var userInfos = await _context.UserInfos
-                .Include(u => u.EmergencyContacts) // Include EmergencyContacts
-                .Include(u => u.NaturalizationInfo) // Include NaturalizationInfo
-                .Include(u => u.Spouse) // Include Spouse
-                .Include(u => u.Passport) // Include Passport
-                .Include(u => u.EntryVisas) // Include EntryVisas
-                    .ThenInclude(e => e.EntryVisaApprovals) // Load nested data in EntryVisas
-                .Include(u => u.Profession) // Include Profession
-                .Include(u => u.ResidenceVisaInfo) // Include ResidenceVisaInfo
+                .Include(u => u.EmergencyContacts) 
+                .Include(u => u.NaturalizationInfo) 
+                .Include(u => u.Spouse) 
+                .Include(u => u.Passport)
+                .Include(u => u.EntryVisas) 
+                    .ThenInclude(e => e.EntryVisaApprovals) 
+                .Include(u => u.Profession) 
+                .Include(u => u.ResidenceVisaInfo) 
                     .ThenInclude(r => r.ResidenceVisaApprovals)
                 .Include(u=>u.ResidenceVisaInfo)
                     .ThenInclude(r=>r.Business)
                 .Include(u=>u.Status)
-                    // Load nested data in ResidenceVisaInfo
                 .ToListAsync();
 
-            // Convert the list of UserInfo to UserInfoDTO using ToDTO method
+
+            foreach (var userInfo in userInfos)
+            {
+                var keyString = Environment.GetEnvironmentVariable("SECRET_KEY");
+
+                byte[] key = AesEncryption.CreateKey(keyString);
+
+                userInfo.Image = AesEncryption.DecryptFromBase64(userInfo.Image,key); 
+            }
+
             var userInfoDTOs = userInfos.Select(u => UserInfoDTO.ToDTO(u)).ToList();
 
             // Return the list of UserInfoDTO objects
             return Ok(userInfoDTOs);
         }
+
+        //[HttpGet]
+        //[Authorize]
+        //public async Task<ActionResult<IEnumerable<UserInfoDTO>>> GetUsersReq()
+        //{
+
+        //    var userInfos = await _context.UserInfos
+        //        .Include(u => u.EmergencyContacts)
+        //        .Include(u => u.NaturalizationInfo)
+        //        .Include(u => u.Spouse)
+        //        .Include(u => u.Passport)
+        //        .Include(u => u.EntryVisas)
+        //            .ThenInclude(e => e.EntryVisaApprovals)
+        //        .Include(u => u.Profession)
+        //        .Include(u => u.ResidenceVisaInfo)
+        //            .ThenInclude(r => r.ResidenceVisaApprovals)
+        //        .Include(u => u.ResidenceVisaInfo)
+        //            .ThenInclude(r => r.Business)
+        //        .Include(u => u.Status)
+        //        .ToListAsync();
+
+        //    // Convert the list of UserInfo to UserInfoDTO using ToDTO method
+        //    var userInfoDTOs = userInfos.Select(u => UserInfoDTO.ToDTO(u)).ToList();
+
+        //    // Return the list of UserInfoDTO objects
+        //    return Ok(userInfoDTOs);
+        //}
+
 
         // GET: api/UserInfo/5
         [HttpGet("{id}")]
@@ -100,20 +139,25 @@ namespace VisaAPI.Controllers
         // POST: api/UserInfo
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<UserInfoDTO>> PostUserInfo(UserInfoDTO userInfoDTO)
         {
-            // Convert the DTO to the UserInfo entity
+            
             UserInfo userInfo = UserInfoDTO.FromDTO(userInfoDTO);
             userInfo.CreatedAt = DateTime.UtcNow;
             if (userInfo.EmergencyContacts != null)
             {
                 foreach (var contact in userInfo.EmergencyContacts)
                 {
-                    contact.Id = 0; // Ensure that Id is not set to avoid PK conflict
+                    contact.Id = 0; 
                 }
             }
+            var keyString = Environment.GetEnvironmentVariable("SECRET_KEY");
 
-            // Add the new userInfo object to the database
+            byte[] key = AesEncryption.CreateKey(keyString);
+
+            userInfo.Image = AesEncryption.EncryptToBase64(userInfo.Image, key);
+           
             _context.UserInfos.Add(userInfo);
             await _context.SaveChangesAsync();
 

@@ -9,6 +9,7 @@ ENV JWT_ISSUER="kidds"
 ENV JWT_AUDIENCE="sritel"
 ENV JWT_DURATION_IN_MINUTES=60
 
+
 # Build image for compiling the application
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
