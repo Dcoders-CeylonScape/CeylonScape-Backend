@@ -26,6 +26,8 @@ public class AuthAPIContext : DbContext
     public DbSet<User> User { get; set; } = null!;
     public DbSet<VisaRequestStatus> Statuses { get; set; } = null!;
 
+    public DbSet<Admin> Admins { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
