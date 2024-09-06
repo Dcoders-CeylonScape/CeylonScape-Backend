@@ -48,13 +48,6 @@ public class UserInfo
     [MaxLength(100)]
     public string Email { get; set; }
     
-    [MaxLength(100)]
-    public string WorkSpaceName { get; set; }
-
-    public string WorkSpaceAddress { get; set; }
-    
-    public string WorkSpaceEmail { get; set; }
-
     public CivilStatus CivilStatus { get; set; }
 
     public ICollection<EmergencyContact>? EmergencyContacts { get; set; }
